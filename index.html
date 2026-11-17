@@ -33,7 +33,7 @@
 </header>
 
 <div class="statusbar">
-  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>Proven on a public test network. Waiting on a node machine for the first real-network trade.</span><span class="upd">Updated November 2026</span></div>
+  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>Proven on a public test network. Waiting on node servers for the first real-network trade.</span><span class="upd">Updated November 2026</span></div>
 </div>
 
 <main id="top">
@@ -107,9 +107,9 @@
     <section class="section" id="blockers">
       <div class="section-head"><span class="section-num">#04</span><h2 class="section-title">What holds it back</h2><span class="section-note">None of it is code</span></div>
       <div class="blockers">
-        <div class="blocker"><span class="sev crit">Critical</span><div><b>The machine</b><p>The development machine cannot host a node, so it reads the chain over the network. On Base, with a block every fifth of a second, that leaves it <span class="num">~200 blocks</span> behind against a <span class="num">10-block</span> window. The check is doing its job and has no setting to loosen. The fix is a bare-metal machine beside a node: about <span class="num">$456/month</span> for one chain, <span class="num">~$1,600/month</span> for all five.</p></div></div>
+        <div class="blocker"><span class="sev crit">Critical</span><div><b>The machine</b><p>The development machine cannot host a node, so it reads the chain over the network. On Base, with a block every fifth of a second, that leaves it <span class="num">~200 blocks</span> behind against a <span class="num">10-block</span> window. The check is doing its job and has no setting to loosen. The fix is a set of bare-metal servers, one per chain, each running that chain's node with the system inside or beside it, plus a small machine for signing and coordination. That is about <span class="num">$456/month</span> for the first chain and <span class="num">~$1,600/month</span> for four; BNB Chain adds a fifth. <a class="more" href="architecture.html#nodes">How the nodes are laid out →</a></p></div></div>
         <div class="blocker"><span class="sev crit">Critical</span><div><b>Capital</b><p>The single-chain engine needs only gas, and that is not where the edge is. The cross-chain engine, the solver fills and later market making all need working capital on each chain, to hold inventory and to front fills. That part is built, plans real candidates from live data, and stops at exactly this point.</p></div></div>
-        <div class="blocker"><span class="sev high">High</span><div><b>Chain access</b><p>A paid plan at a hobby tier: enough to test, but a live run would spend more in a day than it allows. A private endpoint removes this.</p></div></div>
+        <div class="blocker"><span class="sev high">High</span><div><b>Chain access for execution</b><p>Once the nodes exist, the system reads from them. Paid access is then about sending: private routes that put a trade straight into a sequencer or a block builder instead of the public queue, and some of those are paid services. Until then it also reads through a hobby-tier plan, which a live run would outgrow in a day.</p></div></div>
         <div class="blocker"><span class="sev high">High</span><div><b>The AI bill</b><p>One person builds this with an AI coding system, and its plan tier sets the pace. A better plan is the cheapest way to make everything move faster.</p></div></div>
       </div>
     </section>
@@ -130,7 +130,7 @@
       <div class="prose"><p><strong>I am looking for a partner:</strong> someone who brings what the system is missing and shares in what it makes. The terms, including how profit is split, are agreed once there is a real-network record to look at, not before. Smaller help with the other two blockers is welcome too.</p></div>
       <div class="cards three">
         <div class="card"><span class="k">Partner</span><h3>Capital, and a share of what it earns</h3><p>Working capital on two chains for the cross-chain engine, where the edge is. It sits in a vault the partner controls, and the trading key gets only a narrow role. Profit is split on terms agreed against real numbers.</p></div>
-        <div class="card"><span class="k">Help</span><h3>Infrastructure</h3><p>A bare-metal machine that can run a node, and a private chain endpoint, for one chain for six months. In return, a public write-up of what runs on it.</p></div>
+        <div class="card"><span class="k">Help</span><h3>Infrastructure</h3><p>Bare-metal servers for the nodes, starting with one chain for six months, and private execution access on that chain. In return, a public write-up of what runs on it.</p></div>
         <div class="card"><span class="k">Help</span><h3>A better AI plan</h3><p>Credits or a higher plan tier for the AI system the build runs on. It sets how fast everything else happens.</p></div>
       </div>
       <div class="prose"><p>The code is private. Once we have spoken, anyone serious gets a walkthrough on a call, the full written account, the published records and the detailed figures.</p></div>
