@@ -62,21 +62,20 @@
         <div class="stat-grid">
           <div class="stat"><div class="v">5</div><span class="l">Chains the system is built for</span></div>
           <div class="stat"><div class="v">1</div><span class="l">Public test network traded, exact to the smallest unit</span></div>
-          <div class="stat"><div class="v">0</div><span class="l">Real-money trades so far, said plainly</span></div>
+          <div class="stat"><div class="v">0</div><span class="l">Real-money trades so far</span></div>
           <div class="stat"><div class="v warn">~200</div><span class="l">Blocks behind the chain today, against a 10-block safety window</span></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="what">
-      <div class="section-head"><span class="section-num">#01</span><h2 class="section-title">What it is</h2><span class="section-note">In plain English</span></div>
+      <div class="section-head"><span class="section-num">#01</span><h2 class="section-title">What it is</h2></div>
       <div class="prose">
         <p>The same asset is often priced slightly differently in two places at the same moment. Polaris Omega has two engines for that.</p>
         <p><strong>The first engine works inside one chain.</strong> It buys on one exchange and sells on another in a single transaction that either completes or does nothing, with the money borrowed and repaid inside that same transaction. It needs no capital of its own. But on one chain it is a race: whoever lands first in the block takes the trade, and hardware and position decide that race. This engine is the entry point and the steady base, not the edge.</p>
         <p><strong>The second engine works between chains, and that is where the edge sits.</strong> No loan can span two chains, so it needs real capital resting on each side. In exchange, it does not need to be first. The gaps it hunts last seconds to minutes rather than one block, so it competes on pricing both chains correctly, checking every leg exactly and moving inventory cheaply. Few players can do that, because it takes capital, risk control and infrastructure on several chains at once.</p>
         <p><strong>The solver layer is what makes the second engine work.</strong> A solver fills other people's orders on intent-based venues and moves assets between chains for a fee. Polaris Omega already speaks those venues' order formats natively, and its cross-chain engine uses them to move its own inventory. With enough inventory it can fill other people's cross-chain orders from the same capital, so moving its own money earns fees instead of costing them. That is why it is <strong>designed as a hybrid</strong> of arbitrageur and solver. The solver side is built and switched off today, because it needs that capital to front each fill.</p>
       </div>
-      <p class="aside">The architecture is the edge, so this site says what the system does and what it has done, not how it decides what to trade.</p>
     </section>
 
     <section class="section" id="how">
@@ -102,7 +101,7 @@
         <div class="row"><span class="when">2026-11</span><div class="what"><b>A trade through a scoped vault <span class="status ok">Landed</span></b><p>A Safe with a tightly scoped role traded part of its inventory exactly as simulated. Every attempt to step outside the role was refused by the role itself.</p></div></div>
         <div class="row"><span class="when">2026-11</span><div class="what"><b>The two-key path, end to end <span class="status stop">Stopped by its own check</span></b><p>Both signers up, a trade planned and simulated as its two transactions, and handed to the sender. The staleness check stopped it because the machine had fallen too far behind the chain, and nothing was signed. That is the right outcome, and it names the next step.</p></div></div>
       </div>
-      <div class="notice"><b>Not yet:</b> no trade on a real network with real money, no live record of returns, and no forecast of one on this site.</div>
+      <div class="notice"><b>Not yet:</b> no trade on a real network with real money, and no live record of returns.</div>
     </section>
 
     <section class="section" id="blockers">
@@ -111,7 +110,7 @@
         <div class="blocker"><span class="sev crit">Critical</span><div><b>The machine</b><p>The development machine cannot host a node, so it reads the chain over the network. On Base, with a block every fifth of a second, that leaves it <span class="num">~200 blocks</span> behind against a <span class="num">10-block</span> window. The check is doing its job and has no setting to loosen. The fix is a bare-metal machine beside a node: about <span class="num">$456/month</span> for one chain, <span class="num">~$1,600/month</span> for all five.</p></div></div>
         <div class="blocker"><span class="sev crit">Critical</span><div><b>Capital</b><p>The single-chain engine needs only gas, and that is not where the edge is. The cross-chain engine, the solver fills and later market making all need working capital on each chain, to hold inventory and to front fills. That part is built, plans real candidates from live data, and stops at exactly this point.</p></div></div>
         <div class="blocker"><span class="sev high">High</span><div><b>Chain access</b><p>A paid plan at a hobby tier: enough to test, but a live run would spend more in a day than it allows. A private endpoint removes this.</p></div></div>
-        <div class="blocker"><span class="sev high">High</span><div><b>The AI bill</b><p>One person building with an AI coding system, said plainly. The plan tier sets the pace, and a better plan is the cheapest way to make everything move faster.</p></div></div>
+        <div class="blocker"><span class="sev high">High</span><div><b>The AI bill</b><p>One person builds this with an AI coding system, and its plan tier sets the pace. A better plan is the cheapest way to make everything move faster.</p></div></div>
       </div>
     </section>
 
@@ -134,7 +133,7 @@
         <div class="card"><span class="k">Help</span><h3>Infrastructure</h3><p>A bare-metal machine that can run a node, and a private chain endpoint, for one chain for six months. In return, a public write-up of what runs on it.</p></div>
         <div class="card"><span class="k">Help</span><h3>A better AI plan</h3><p>Credits or a higher plan tier for the AI system the build runs on. It sets how fast everything else happens.</p></div>
       </div>
-      <div class="prose"><p>The code is private. Once we have spoken, anyone serious gets a walkthrough on a call, the full written account, the published records and the figures this site leaves out.</p></div>
+      <div class="prose"><p>The code is private. Once we have spoken, anyone serious gets a walkthrough on a call, the full written account, the published records and the detailed figures.</p></div>
       <div class="contact">
         <div class="line"><span class="key">Name</span><span class="val">Jamike Divine</span></div>
         <div class="line"><span class="key">Email</span><a class="val" href="mailto:kelbottumm@gmail.com">kelbottumm@gmail.com</a></div>

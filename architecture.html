@@ -35,7 +35,7 @@
 </header>
 
 <div class="statusbar">
-  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>What each part does and whether it is switched on. The parts that decide what to trade are left out on purpose.</span><span class="upd">Updated November 2026</span></div>
+  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>What each part does and whether it is switched on.</span><span class="upd">Updated November 2026</span></div>
 </div>
 
 <main id="top">
@@ -169,7 +169,7 @@
       <div class="section-head"><span class="section-num">#08</span><h2 class="section-title">Full scope</h2><span class="section-note">What the plan covers, by phase</span></div>
       <div class="layers">
         <div class="layer"><span class="ln">P0</span><div><b>Single-chain, atomic</b><p>Gaps between pools on one chain, and liquidations on lending markets. Funded by loans repaid in the same transaction.</p><div class="chips"><i class="chip live">Arbitrage: live on testnet</i><i class="chip built">Liquidations: built</i></div></div></div>
-        <div class="layer"><span class="ln">P1</span><div><b>Cross-chain, capital-backed</b><p>The same asset priced differently on two chains, related assets drifting apart, and liquidation strategies kept private. Funded by owned inventory, by borrowing on each chain, by delegated credit, or from a partner's own vault.</p><div class="chips"><i class="chip built">Planner and Safe: built</i><i class="chip design">Borrowing, credit, partner vault: designed</i></div></div></div>
+        <div class="layer"><span class="ln">P1</span><div><b>Cross-chain, capital-backed</b><p>The same asset priced differently on two chains, related assets drifting apart, and cross-chain liquidations. Funded by owned inventory, by borrowing on each chain, by delegated credit, or from a partner's own vault.</p><div class="chips"><i class="chip built">Planner and Safe: built</i><i class="chip design">Borrowing, credit, partner vault: designed</i></div></div></div>
         <div class="layer"><span class="ln">P2</span><div><b>Speed</b><p>Private routes to block builders, bids that adapt to the competition, reactions within a block, and several opportunities packed into one transaction.</p><div class="chips"><i class="chip design">Designed</i></div></div></div>
         <div class="layer"><span class="ln">P3</span><div><b>Being the liquidity</b><p>Two-sided quotes on the price model already built, and filling other people's cross-chain orders as a solver and relayer.</p><div class="chips"><i class="chip built">Built, not switched on</i></div></div></div>
         <div class="layer"><span class="ln">∞</span><div><b>The learning loop</b><p>A simulated world with rival bots and stress scenarios, coefficients learned from the system's own records, discovery from chain history, an optimiser over every route at once, and automatic re-review of any protocol that upgrades.</p><div class="chips"><i class="chip built">World and estimator: built</i><i class="chip design">The rest: designed</i></div></div></div>
@@ -179,7 +179,7 @@
     </section>
 
     <section class="section" id="limits">
-      <div class="section-head"><span class="section-num">#09</span><h2 class="section-title">What is not there yet</h2><span class="section-note">Said plainly</span></div>
+      <div class="section-head"><span class="section-num">#09</span><h2 class="section-title">What is not there yet</h2></div>
       <div class="rows">
         <div class="row"><span class="when">Machine</span><div class="what"><b>No node machine</b><p>The node mode is built and has run on a development node. In development the system reads the chain over the network and falls behind fast chains.</p></div></div>
         <div class="row"><span class="when">Capital</span><div class="what"><b>No working capital on two chains</b><p>The cross-chain engine plans and checks real candidates, and stops where inventory is needed.</p></div></div>
