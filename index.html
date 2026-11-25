@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://divine2099.github.io/polaris-omega/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%275%27 fill=%27%230a0a0b%27/%3E%3Cpath fill=%27%232ff5a5%27 d=%27M12 2.5 13.4 10.6 21.5 12 13.4 13.4 12 21.5 10.6 13.4 2.5 12 10.6 10.6Z%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +25,8 @@
       <a class="nav-sec sm" href="#what">What</a>
       <a class="nav-sec sm" href="#how">How</a>
       <a class="nav-sec sm" href="#log">Log</a>
-      <a class="nav-sec sm" href="#blockers">Blockers</a>
+      <a class="nav-sec sm" href="#competition">Competition</a>
+      <a class="nav-sec sm" href="#milestones">Milestones</a>
       <a href="architecture.html">Architecture</a>
       <a class="nav-cta" href="#help">Work with me →</a>
     </nav>
@@ -33,7 +34,7 @@
 </header>
 
 <div class="statusbar">
-  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>Proven on a public test network. Waiting on node servers for the first real-network trade.</span><span class="upd">Updated November 2026</span></div>
+  <div class="wrap"><span class="dot" aria-hidden="true"></span><span>Proven on a public test network. Next: every part working together and a replay of real-network history, then a node server for the first real-money trade.</span><span class="upd">Updated November 2026</span></div>
 </div>
 
 <main id="top">
@@ -46,9 +47,8 @@
         <p class="role">A cross-chain arbitrage engine with a solver-grade execution layer.</p>
       </div>
       <div class="lede">
-        <p>It finds price differences between decentralised exchanges, on one chain and between chains, and checks every trade exactly against the chain before sending it.</p>
-        <p><strong>Its edge is between chains.</strong> There the winner is whoever prices both sides correctly and has inventory in place, not whoever is first into the block.</p>
-        <p>It moves money only through each exchange's own entry functions, never by sending it somewhere and hoping.</p>
+        <p>It finds the same asset priced differently on two chains, and checks every trade exactly against the chain before sending it.</p>
+        <p><strong>Its edge is between chains.</strong> There the winner is whoever holds inventory on both sides and prices both correctly, not whoever bids the most to be first into a block.</p>
         <p>Built by Jamike Divine, a solo builder working with an AI system. Proven on a public test network; not yet traded with real money.</p>
       </div>
       <div class="actions">
@@ -57,35 +57,72 @@
         <a class="btn btn-ghost" href="https://github.com/divine2099">GitHub ↗</a>
       </div>
 
+      <figure class="figure" aria-labelledby="fig-hero-cap">
+        <svg viewBox="0 0 640 230" role="img" aria-label="One asset on two chains at two prices, with inventory resting on both sides and the trade taken on both at once">
+          <rect class="ln-panel" x="8" y="20" width="250" height="190" rx="10"/>
+          <rect class="ln-panel" x="382" y="20" width="250" height="190" rx="10"/>
+          <text x="24" y="44" class="t-hi">Chain A</text><text x="398" y="44" class="t-hi">Chain B</text>
+          <text x="24" y="62" class="t-dim">the asset, cheaper here</text><text x="398" y="62" class="t-dim">the same asset, dearer here</text>
+          <line class="ln-soft" x1="24" y1="150" x2="242" y2="150"/><line class="ln-soft" x1="398" y1="110" x2="616" y2="110"/>
+          <polyline class="ln-green" points="24,140 60,146 96,138 132,152 168,147 204,151 242,150"/>
+          <polyline class="ln-amber" points="398,118 434,106 470,114 506,104 542,112 578,108 616,110"/>
+          <circle class="f-green blip" cx="242" cy="150" r="4"/><circle class="f-amber blip d2" cx="616" cy="110" r="4"/>
+          <rect class="f-elev" x="24" y="172" width="22" height="8" rx="2"/><rect class="f-elev" x="24" y="164" width="22" height="8" rx="2"/><rect class="f-elev" x="24" y="156" width="22" height="8" rx="2"/>
+          <text x="54" y="180" class="t-dim">inventory rests here</text>
+          <rect class="f-elev" x="398" y="172" width="22" height="8" rx="2"/><rect class="f-elev" x="398" y="164" width="22" height="8" rx="2"/><rect class="f-elev" x="398" y="156" width="22" height="8" rx="2"/>
+          <text x="428" y="180" class="t-dim">and here</text>
+          <path class="ln-dash flow-dash" d="M262 150 C 310 150, 330 110, 378 110"/>
+          <rect class="f-wash" x="268" y="74" width="104" height="30" rx="6"/>
+          <text x="320" y="94" text-anchor="middle" class="t-green t-sm">the gap</text>
+          <text x="140" y="200" text-anchor="middle" class="t-sm">buy</text><text x="514" y="200" text-anchor="middle" class="t-sm">sell</text>
+        </svg>
+        <figcaption class="fig-cap" id="fig-hero-cap"><b>The cross-chain engine.</b> One asset, proven on chain to be the same asset on both sides, priced differently on two chains. With inventory already on each side it buys where it is cheap and sells where it is dear, without waiting for a bridge and without racing anyone for a block.</figcaption>
+      </figure>
+
       <div class="track" aria-label="Where it stands">
         <div class="track-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>~/polaris-omega — status</span></div>
         <div class="stat-grid">
           <div class="stat"><div class="v">5</div><span class="l">Chains the system is built for</span></div>
           <div class="stat"><div class="v">1</div><span class="l">Public test network traded, exact to the smallest unit</span></div>
-          <div class="stat"><div class="v">0</div><span class="l">Real-money trades so far</span></div>
-          <div class="stat"><div class="v warn">~200</div><span class="l">Blocks behind the chain today, against a 10-block safety window</span></div>
+          <div class="stat"><div class="v">14 / 55</div><span class="l">Capabilities that have run on live chain data</span></div>
+          <div class="stat"><div class="v warn">0</div><span class="l">Real-money trades so far</span></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="what">
-      <div class="section-head"><span class="section-num">#01</span><h2 class="section-title">What it is</h2></div>
-      <div class="prose">
-        <p>The same asset is often priced slightly differently in two places at the same moment. Polaris Omega has two engines for that.</p>
-        <p><strong>The first engine works inside one chain.</strong> It buys on one exchange and sells on another in a single transaction that either completes or does nothing, with the money borrowed and repaid inside that same transaction. It needs no capital of its own. But on one chain it is a race: whoever lands first in the block takes the trade, and hardware and position decide that race. This engine is the entry point and the steady base, not the edge.</p>
-        <p><strong>The second engine works between chains, and that is where the edge sits.</strong> No loan can span two chains, so it needs real capital resting on each side. In exchange, it does not need to be first. The gaps it hunts last seconds to minutes rather than one block, so it competes on pricing both chains correctly, checking every leg exactly and moving inventory cheaply. Few players can do that, because it takes capital, risk control and infrastructure on several chains at once.</p>
-        <p><strong>The solver layer is what makes the second engine work.</strong> A solver fills other people's orders on intent-based venues and moves assets between chains for a fee. Polaris Omega already speaks those venues' order formats natively, and its cross-chain engine uses them to move its own inventory. With enough inventory it can fill other people's cross-chain orders from the same capital, so moving its own money earns fees instead of costing them. That is why it is <strong>designed as a hybrid</strong> of arbitrageur and solver. The solver side is built and switched off today, because it needs that capital to front each fill.</p>
+      <div class="section-head"><span class="section-num">#01</span><h2 class="section-title">What it is</h2><span class="section-note">Two engines under one roof</span></div>
+      <p class="section-intro">The same asset is often priced slightly differently in two places at the same moment. Polaris Omega takes those differences with two engines, and only the second one is the edge.</p>
+      <div class="cards">
+        <div class="card"><span class="k">Engine 1 · one chain</span><h3>Borrowed and repaid in one transaction</h3>
+          <ul class="points">
+            <li>Buys on one exchange and sells on another in a single transaction that either profits or undoes itself.</li>
+            <li><b>The single-chain engine needs no capital of its own:</b> the money is borrowed and repaid inside that same transaction.</li>
+            <li><b>A race.</b> Whoever lands first in the block wins, so this engine is the entry point and the steady base.</li>
+          </ul><div class="chips"><i class="chip live">Trading on testnet</i></div></div>
+        <div class="card"><span class="k">Engine 2 · between chains</span><h3>Inventory on both sides, no race</h3>
+          <ul class="points">
+            <li>No loan can span two chains, so it needs <b>real capital resting on each side</b>.</li>
+            <li>It does not need to be first. Gaps between chains last many blocks, not one.</li>
+            <li>It competes on pricing both chains correctly, checking every leg exactly and moving inventory cheaply.</li>
+          </ul><div class="chips"><i class="chip live">Plans live candidates</i><i class="chip built">Waits on capital</i></div></div>
+        <div class="card wide"><span class="k">The solver layer · inside engine 2</span><h3>Moving its own inventory, and later filling other people's orders</h3>
+          <ul class="points">
+            <li>Speaks the order formats of the solver and bridge networks exactly, and uses them to move its own inventory between chains.</li>
+            <li>With enough inventory, the same capital can fill other people's cross-chain orders for a fee, so moving its own money earns instead of costing.</li>
+            <li>That is why it is <b>designed as</b> a hybrid of arbitrageur and solver. The solver side is built and switched off, because it needs capital to front each fill.</li>
+          </ul></div>
       </div>
     </section>
 
     <section class="section" id="how">
       <div class="section-head"><span class="section-num">#02</span><h2 class="section-title">How it is built</h2><span class="section-note"><a href="architecture.html" class="more">Full architecture →</a></span></div>
       <div class="cards">
-        <div class="card"><h3>Inside the node</h3><p>Most bots ask a node for data over the network and are always a little behind. On Ethereum, Base and Optimism this runs as an extension inside the node software itself. On Arbitrum and BNB Chain, whose nodes have no extension slot, it runs beside the node on the same machine and reads its live feed.</p></div>
+        <div class="card"><h3>Built to run inside the node</h3><p>Most bots ask a node for data over the network and are always a little behind. This is built to run as an extension inside the node software on Ethereum, Base and Optimism, and beside the node on the same machine on Arbitrum and BNB Chain. Until the servers exist it reads over the network.</p></div>
         <div class="card"><h3>Every trade simulated exactly</h3><p>Before anything is sent, the trade is run against the chain's current state on the same virtual machine the chain uses. If the result is off by the smallest unit, it is not sent.</p></div>
-        <div class="card"><h3>One small contract, money through doors</h3><p>A single contract with no stored state carries out each trade. Value moves only through an exchange's own entry functions, enforced when the trade is built rather than reviewed afterwards.</p></div>
-        <div class="card"><h3>Two keys and a scoped vault</h3><p>A single-transaction trade takes one key. Anything that settles in two parts needs a second, independent signer with its own rules. Inventory sits in a Safe, and the trading key gets only a narrow role over it.</p></div>
-        <div class="card wide"><h3>Every claim names its check</h3><p>A ledger records every assumption the system rests on, marked verified, unverified or falsified, with the test that decides it. The tools are built to tell "nothing was there" apart from "I could not look", because most tools print the same silence for both.</p></div>
+        <div class="card"><h3>One small contract, money through doors</h3><p>A single contract with no stored state carries out each trade. Value moves only through an exchange's own entry functions, checked when the trade is built.</p></div>
+        <div class="card"><h3>Two keys and a scoped vault</h3><p>A one-transaction trade takes one key. Anything that settles in two parts needs a second, independent signer. Inventory sits in a Safe, and the trading key gets only a narrow role over it.</p></div>
+        <div class="card wide"><h3>Every claim names its check</h3><p>A ledger records every assumption the system rests on, marked verified, unverified or falsified, with the test that decides it. Its tools are built to tell "nothing was there" apart from "I could not look", because most tools print the same silence for both.</p></div>
       </div>
       <div class="cards three">
         <div class="card"><span class="k">Chains</span><div class="tags"><span>Base</span><span>Arbitrum</span><span>Optimism</span><span>BNB Chain</span><span>Ethereum</span></div></div>
@@ -95,48 +132,150 @@
     </section>
 
     <section class="section" id="log">
-      <div class="section-head"><span class="section-num">#03</span><h2 class="section-title">What has happened</h2><span class="section-note">Base test network</span></div>
+      <div class="section-head"><span class="section-num">#03</span><h2 class="section-title">What has happened</h2><span class="section-note">Real networks, test network</span></div>
+      <div class="figure capbar" aria-label="55 capabilities by stage">
+        <div class="bar" role="img" aria-label="2 research-gated, 21 designed, 12 built, 6 wired, 11 run on live chain data, 3 sent on testnet, 0 live on mainnet"><span class="s-gate"></span><span class="s-design"></span><span class="s-built"></span><span class="s-wired"></span><span class="s-ran"></span><span class="s-sent"></span></div>
+        <div class="keys"><span><i class="s-sent"></i><b>3</b> sent transactions on a test network</span><span><i class="s-ran"></i><b>11</b> ran on live chain data</span><span><i class="s-wired"></i><b>6</b> switched on</span><span><i class="s-built"></i><b>12</b> built, not switched on</span><span><i class="s-design"></i><b>21</b> designed</span><span><i class="s-gate"></i><b>2</b> waiting on research</span></div>
+        <p class="fig-cap"><b>All 55 capabilities, by how far each has got.</b> Each stage is worked out from the code, from what the running program calls and from its own records every time the project is built, never typed in. None is live with real money yet.</p>
+      </div>
       <div class="rows">
-        <div class="row"><span class="when">2026-10</span><div class="what"><b>First live trades <span class="status ok">Landed</span></b><p>Found, simulated, signed and landed arbitrage trades on Base's public test network. Each landed trade was profitable after gas, and every receipt field was checked against the chain. Reverted attempts are counted too, because a revert still costs gas.</p></div></div>
+        <div class="row"><span class="when">2026-10</span><div class="what"><b>Dry runs on five real networks <span class="status ok">Ran</span></b><p>The whole path, from a new block to a trade ready to sign, ran on the live heads of all five real networks, sending nothing. Every refusal was recorded with its reason.</p></div></div>
+        <div class="row"><span class="when">2026-10</span><div class="what"><b>First live trades <span class="status ok">Landed</span></b><p>Found, simulated, signed and landed arbitrage trades on Base's public test network, each landed trade profitable after gas and every receipt field checked against the chain. Reverted attempts are counted too, because a revert still costs gas.</p></div></div>
+        <div class="row"><span class="when">2026-11</span><div class="what"><b>The same asset, proven across chains <span class="status ok">Ran</span></b><p>Before it compares a price on two chains, the system proves from the chains themselves that the two tokens are one asset. Most assets it sees on several chains are proven; the rest are refused for cross-chain work until they are.</p></div></div>
+        <div class="row"><span class="when">2026-11</span><div class="what"><b>Cross-chain prices compared live <span class="status ok">Ran</span></b><p>Price estimates kept on each chain were compared across chains on live data, and the cross-chain engine planned real candidates from them. Every plan stopped where working capital is needed, as designed.</p></div></div>
         <div class="row"><span class="when">2026-11</span><div class="what"><b>A trade through a scoped vault <span class="status ok">Landed</span></b><p>A Safe with a tightly scoped role traded part of its inventory exactly as simulated. Every attempt to step outside the role was refused by the role itself.</p></div></div>
-        <div class="row"><span class="when">2026-11</span><div class="what"><b>The two-key path, end to end <span class="status stop">Stopped by its own check</span></b><p>Both signers up, a trade planned and simulated as its two transactions, and handed to the sender. The staleness check stopped it because the machine had fallen too far behind the chain, and nothing was signed. That is the right outcome, and it names the next step.</p></div></div>
+        <div class="row"><span class="when">2026-11</span><div class="what"><b>The two-key path, end to end <span class="status stop">Stopped by its own check</span></b><p>Both signers up, a trade planned and simulated as its two transactions and handed to the sender. The staleness check stopped it because the machine had fallen too far behind the chain, and nothing was signed. That is the right outcome, and it names the next step.</p></div></div>
+        <div class="row"><span class="when">2026-11</span><div class="what"><b>Loss limits switched on <span class="status ok">Live</span></b><p>A drawdown limit against the capital allocated to each chain, and a limit on how lopsided inventory may become, now run on every trade decision. A breach halts trading.</p></div></div>
       </div>
       <div class="notice"><b>Not yet:</b> no trade on a real network with real money, and no live record of returns.</div>
     </section>
 
+    <section class="section" id="competition">
+      <div class="section-head"><span class="section-num">#04</span><h2 class="section-title">The competition</h2><span class="section-note">From published research</span></div>
+      <p class="section-intro"><strong>On one chain, everyone runs the same trades, and the race to win them hands most of the profit to the house.</strong> Between chains the contest is different: nobody wins by outbidding, and that is the contest this system is built for.</p>
+      <div class="fig-pair">
+        <figure class="figure" aria-labelledby="fig-race-cap">
+          <svg viewBox="0 0 300 200" role="img" aria-label="Many bots converge on one block slot">
+            <rect class="ln-panel" x="196" y="70" width="88" height="60" rx="8"/>
+            <text x="240" y="96" text-anchor="middle" class="t-hi t-sm">one slot</text><text x="240" y="114" text-anchor="middle" class="t-dim">in the block</text>
+            <path class="ln-muted" d="M24 30 C 110 30, 140 92, 192 96"/><path class="ln-muted" d="M24 64 C 110 64, 140 96, 192 98"/>
+            <path class="ln-amber" d="M24 100 L 192 100"/>
+            <path class="ln-muted" d="M24 136 C 110 136, 140 104, 192 102"/><path class="ln-muted" d="M24 170 C 110 170, 140 108, 192 104"/>
+            <circle class="f-muted blip" cx="24" cy="30" r="4"/><circle class="f-muted blip d2" cx="24" cy="64" r="4"/><circle class="f-amber" cx="24" cy="100" r="4"/><circle class="f-muted blip d3" cx="24" cy="136" r="4"/><circle class="f-muted blip" cx="24" cy="170" r="4"/>
+            <text x="36" y="20" class="t-dim">every bot, the same trade</text>
+          </svg>
+          <figcaption class="fig-cap" id="fig-race-cap"><b>On one chain: a race for one slot.</b> The winner is whoever bids the most or sends the most. On the rollups a single winning arbitrage can sit behind hundreds of failed attempts.</figcaption>
+        </figure>
+        <figure class="figure" aria-labelledby="fig-contest-cap">
+          <svg viewBox="0 0 300 200" role="img" aria-label="Two chains each holding inventory, with priced risk between them">
+            <rect class="ln-panel" x="10" y="40" width="110" height="120" rx="8"/><rect class="ln-panel" x="180" y="40" width="110" height="120" rx="8"/>
+            <text x="65" y="64" text-anchor="middle" class="t-hi t-sm">Chain A</text><text x="235" y="64" text-anchor="middle" class="t-hi t-sm">Chain B</text>
+            <rect class="f-elev" x="50" y="120" width="30" height="9" rx="2"/><rect class="f-elev" x="50" y="110" width="30" height="9" rx="2"/><rect class="f-elev" x="50" y="100" width="30" height="9" rx="2"/>
+            <rect class="f-elev" x="220" y="120" width="30" height="9" rx="2"/><rect class="f-elev" x="220" y="110" width="30" height="9" rx="2"/><rect class="f-elev" x="220" y="100" width="30" height="9" rx="2"/>
+            <text x="65" y="148" text-anchor="middle" class="t-dim">inventory</text><text x="235" y="148" text-anchor="middle" class="t-dim">inventory</text>
+            <path class="ln-dash flow-dash" d="M122 100 L 178 100"/>
+            <text x="150" y="88" text-anchor="middle" class="t-green t-sm">priced</text><text x="150" y="124" text-anchor="middle" class="t-dim">leg risk</text>
+            <text x="150" y="26" text-anchor="middle" class="t-dim">capital, pricing, risk control</text>
+          </svg>
+          <figcaption class="fig-cap" id="fig-contest-cap"><b>Between chains: a different contest.</b> The winner holds inventory on both sides, prices both correctly and controls the risk of one leg settling alone. That barrier is why few firms do it.</figcaption>
+        </figure>
+      </div>
+      <figure class="figure" aria-labelledby="fig-split-cap">
+        <svg viewBox="0 0 640 96" role="img" aria-label="Searchers 17.4 percent, builders 10.5 percent, validators 72.1 percent">
+          <rect class="f-green-dim" x="0" y="20" width="111" height="28" rx="3"/>
+          <rect class="f-amber" x="111" y="20" width="67" height="28"/>
+          <rect class="f-muted" x="178" y="20" width="462" height="28" rx="3"/>
+          <text x="8" y="72" class="t-sm">searchers 17%</text><text x="118" y="88" class="t-sm">builders 11%</text><text x="632" y="72" text-anchor="end" class="t-hi t-sm">validators 72%</text>
+          <text x="0" y="12" class="t-dim">who kept the value on Ethereum, early 2023</text>
+        </svg>
+        <figcaption class="fig-cap" id="fig-split-cap"><b>Where the value went on one chain.</b> Of the value searchers extracted on Ethereum in January and February 2023, they kept about a sixth. The block producers kept almost three-quarters. Source: EigenPhi, reproduced in published research.</figcaption>
+      </figure>
+      <div class="facts">
+        <div class="fact"><span class="v">~$870M</span><span class="l">Cross-chain arbitrage in one year across nine chains, 2023–24, growing fivefold</span></div>
+        <div class="fact"><span class="v">2 in 3</span><span class="l">Of those trades used inventory already in place, settling in a median of 9 seconds</span></div>
+        <div class="fact"><span class="v">Top 5</span><span class="l">Addresses did half of all cross-chain trades: few firms, because the barrier is capital</span></div>
+        <div class="fact"><span class="v">500,000+</span><span class="l">Price gaps between rollups that nobody took, in six months of one study</span></div>
+      </div>
+      <div class="prose">
+        <p><strong>How it means to survive.</strong> It does not try to beat the leaders at their own trade. It looks for the gaps they do not take, by why a gap exists rather than by the patterns everyone scans, and it carries the risk of one leg settling alone with a priced limit and two keys.</p>
+        <p><strong>Where it is weaker, said first.</strong> The leaders settle in seconds. On the development machine this system priced a couple of hundred blocks behind a fast chain, so a node server is the price of entry, not an extra. Before any capital is at risk, the next milestone replays real-network history to measure which gaps the leaders take, how fast, and what they pay.</p>
+      </div>
+      <p class="aside">Sources: Öz et al., <em>Cross-chain arbitrage: the next frontier of MEV</em> (2025); Gogol et al., <em>Cross-rollup MEV</em> (2024); Wu and Öz, <em>To wait or to probe</em> (2026); EigenPhi (2023).</p>
+    </section>
+
+    <section class="section" id="thinking">
+      <div class="section-head"><span class="section-num">#05</span><h2 class="section-title">Where the thinking has moved</h2><span class="section-note">November 2026</span></div>
+      <p class="section-intro">The first version found the trades everyone looks for. The plan has moved past that: find gaps by their cause, prove them on history, and run everything as one loop.</p>
+      <div class="fig-pair">
+        <figure class="figure" aria-labelledby="fig-loop-cap">
+          <svg viewBox="0 0 320 320" role="img" aria-label="The loop: map, vet, declare, find, prove, decide, route, execute, record, learn">
+            <circle class="ln-soft" cx="160" cy="160" r="112"/>
+            <g class="orbit"><circle class="f-green" cx="160" cy="48" r="5"/></g>
+            <g>
+              <circle class="f-elev" cx="160" cy="48" r="4"/><text x="160" y="32" text-anchor="middle" class="t-sm t-hi">map</text>
+              <circle class="f-elev" cx="226" cy="69" r="4"/><text x="238" y="62" class="t-sm">vet</text>
+              <circle class="f-elev" cx="267" cy="125" r="4"/><text x="279" y="122" class="t-sm">declare</text>
+              <circle class="f-elev" cx="267" cy="195" r="4"/><text x="279" y="204" class="t-sm">find</text>
+              <circle class="f-elev" cx="226" cy="251" r="4"/><text x="238" y="264" class="t-sm t-green">prove</text>
+              <circle class="f-elev" cx="160" cy="272" r="4"/><text x="160" y="294" text-anchor="middle" class="t-sm">decide</text>
+              <circle class="f-elev" cx="94" cy="251" r="4"/><text x="82" y="264" text-anchor="end" class="t-sm">route</text>
+              <circle class="f-elev" cx="53" cy="195" r="4"/><text x="41" y="204" text-anchor="end" class="t-sm">execute</text>
+              <circle class="f-elev" cx="53" cy="125" r="4"/><text x="41" y="122" text-anchor="end" class="t-sm">record</text>
+              <circle class="f-elev" cx="94" cy="69" r="4"/><text x="82" y="62" text-anchor="end" class="t-sm">learn</text>
+            </g>
+            <text x="160" y="154" text-anchor="middle" class="t-hi t-lg">one loop</text>
+            <text x="160" y="174" text-anchor="middle" class="t-dim">exact simulation decides</text>
+          </svg>
+          <figcaption class="fig-cap" id="fig-loop-cap"><b>One loop holds it together.</b> Map the market, vet what is found, declare it, find opportunities, prove each by exact simulation, decide under the risk limits, route, execute, record, and learn from the record.</figcaption>
+        </figure>
+        <div class="cards one">
+          <div class="card"><span class="k">Finding</span><h3>Look for why a gap exists</h3><p>Price gaps have a few causes: one asset under two rules, markets on different clocks, thresholds that force a trade, frictions that keep a gap open, identities that break between chains. Search by cause, and a known strategy becomes a label on what was found.</p><div class="chips"><i class="chip design">Designed</i></div></div>
+          <div class="card"><span class="k">Evidence</span><h3>Prove it on real-network history first</h3><p>Replay past blocks through the same exact simulator and label every opportunity: who took it, how, and what they paid. Real-market evidence with no capital at risk.</p><div class="chips"><i class="chip built">Next milestone</i></div></div>
+        </div>
+      </div>
+      <div class="cards three">
+        <div class="card"><span class="k">Learning</span><h3>A model that can only miss</h3><p>History trains a model that suggests where to look. The simulation and the safety checks decide, so a wrong suggestion costs a missed trade, never a bad one.</p><div class="chips"><i class="chip design">Designed</i></div></div>
+        <div class="card"><span class="k">Coverage</span><h3>The whole market, vetted continuously</h3><p>Protocols are discovered from the chains and quarantined until checked. Any upgrade to one in use stops trading on it until reviewed.</p><div class="chips"><i class="chip live">Upgrade watch: live</i><i class="chip design">Discovery: designed</i></div></div>
+        <div class="card"><span class="k">Capital</span><h3>Funding forms that never leave the owner</h3><p>A vault per chain is built. Borrowing through that vault's role, delegated credit, and a partner's own vault with the split paid on chain are designed.</p><div class="chips"><i class="chip live">Vault: built</i><i class="chip design">The rest: designed</i></div></div>
+      </div>
+    </section>
+
     <section class="section" id="blockers">
-      <div class="section-head"><span class="section-num">#04</span><h2 class="section-title">What holds it back</h2><span class="section-note">None of it is code</span></div>
+      <div class="section-head"><span class="section-num">#06</span><h2 class="section-title">What holds it back</h2><span class="section-note">None of it is code</span></div>
       <div class="blockers">
-        <div class="blocker"><span class="sev crit">Critical</span><div><b>The machine</b><p>The development machine cannot host a node, so it reads the chain over the network. On Base, with a block every fifth of a second, that leaves it <span class="num">~200 blocks</span> behind against a <span class="num">10-block</span> window. The check is doing its job and has no setting to loosen. The fix is a set of bare-metal servers, one per chain, each running that chain's node with the system inside or beside it, plus a small machine for signing and coordination. That is about <span class="num">$456/month</span> for the first chain and <span class="num">~$1,600/month</span> for four; BNB Chain adds a fifth. <a class="more" href="architecture.html#nodes">How the nodes are laid out →</a></p></div></div>
-        <div class="blocker"><span class="sev crit">Critical</span><div><b>Capital</b><p>The single-chain engine needs only gas, and that is not where the edge is. The cross-chain engine, the solver fills and later market making all need working capital on each chain, to hold inventory and to front fills. That part is built, plans real candidates from live data, and stops at exactly this point.</p></div></div>
-        <div class="blocker"><span class="sev high">High</span><div><b>Chain access for execution</b><p>Once the nodes exist, the system reads from them. Paid access is then about sending: private routes that put a trade straight into a sequencer or a block builder instead of the public queue, and some of those are paid services. Until then it also reads through a hobby-tier plan, which a live run would outgrow in a day.</p></div></div>
+        <div class="blocker"><span class="sev crit">Critical</span><div><b>The machine</b><p>The development machine cannot host a node, so it reads the chain over the network. On Base, with a block every fifth of a second, it was measured a couple of hundred blocks behind against a <span class="num">10-block</span> safety window. That figure was taken on an older, slower access plan and is being measured again, but no network plan reaches a node's speed. The fix is a bare-metal server per chain, about <span class="num">$456/month</span> for the first and <span class="num">~$1,600/month</span> for four. <a class="more" href="architecture.html#request">The server layout is available on request →</a></p></div></div>
+        <div class="blocker"><span class="sev crit">Critical</span><div><b>Capital</b><p>The single-chain engine needs only gas, and that is not where the edge is. The cross-chain engine, the solver fills and later market making all need working capital on each chain. That part is built, plans real candidates from live data, and stops at exactly this point.</p></div></div>
+        <div class="blocker"><span class="sev high">High</span><div><b>Chain access for sending</b><p>Private routes that put a trade straight into a sequencer or a block builder instead of the public queue, some of them paid. Until the nodes exist it also reads through a paid plan at a small tier, which a long live run would outgrow.</p></div></div>
         <div class="blocker"><span class="sev high">High</span><div><b>The AI bill</b><p>One person builds this with an AI coding system, and its plan tier sets the pace. A better plan is the cheapest way to make everything move faster.</p></div></div>
       </div>
     </section>
 
-    <section class="section" id="next">
-      <div class="section-head"><span class="section-num">#05</span><h2 class="section-title">Roadmap</h2><span class="section-note">No dates until the machine exists</span></div>
-      <ol class="steps">
-        <li><b>A node machine for one chain.</b> The system moves beside a node and stops falling behind.</li>
-        <li><b>The first real-network trades,</b> single-chain first, with small balances declared in advance and every transaction published net of gas.</li>
-        <li><b>The cross-chain engine with working capital,</b> starting with inventory on two chains in a vault the system cannot empty, every leg co-signed by two keys.</li>
-        <li><b>The solver side,</b> filling other people's cross-chain orders from that same inventory, starting with the venue that needs no one's permission.</li>
-        <li><b>The other chains,</b> one at a time, each with its own record.</li>
+    <section class="section" id="milestones">
+      <div class="section-head"><span class="section-num">#07</span><h2 class="section-title">Milestones</h2><span class="section-note">Timed from when each one's need is met</span></div>
+      <p class="section-intro">Two tracks. <strong>The first proves the whole system works together before any money is at risk:</strong> every part switched on, trained on real history, and tested under stress against rivals. <strong>The second puts it on real networks</strong>, one need at a time. Each milestone says how anyone can check it is done, and times run from the day the thing it waits on is in place.</p>
+      <ol class="timeline">
+        <li class="done"><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Proven on a test network</b><span class="when">Done</span></div><p>Trades found, simulated, signed and landed exactly as predicted; a trade through a scoped vault; the two-key path driven to the send.</p><span class="check"><b>Check:</b> every receipt is public on the test network.</span></div></li>
+        <li class="next"><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>A replay of real-network history</b><span class="when">Next · needs no funding</span></div><p>A stretch of one real network's past blocks replayed through the exact simulator, every opportunity labelled with who took it and what they paid.</p><span class="check"><b>Check:</b> a written report with ranges, reproducible from public block data.</span></div></li>
+        <li class="next"><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Every part working together</b><span class="when">Under way · needs no funding</span></div><p>Every component called by the running program rather than only by its tests, each boundary between two of them tested with real code on both sides, and every kind of trade wired end to end as a dry run.</p><span class="check"><b>Check:</b> an integration suite with a test for every boundary, and the capability map showing every component switched on.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Trained on history</b><span class="when">After the replay · needs no funding</span></div><p>The labelled history becomes training data. A model that ranks where to look is kept only if it beats a simple baseline on history it has not seen, and the risk coefficients are estimated from real outcomes instead of defaults.</p><span class="check"><b>Check:</b> the held-out comparison, and each coefficient with its sample and its refusal when the sample is too thin.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Tested under stress, all parts at once</b><span class="when">After training · needs no funding</span></div><p>The unmodified engine runs inside a simulated multi-chain world built from real state, against rival bots, through six scenarios: steady markets, a volatility spike, a chain going offline, a gas spike, hostile tokens and failing solvers, and lopsided inventory. The simulation is checked against the replayed history.</p><span class="check"><b>Check:</b> every scenario passing, and ten thousand simulated trades with no loss of principal.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Beside a node on one chain</b><span class="when">+2 weeks from the server</span></div><p>The system running beside its own node and pricing inside the safety window on the live chain.</p><span class="check"><b>Check:</b> the measured lag, published.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>First real-money trades</b><span class="when">+6 weeks from the server</span></div><p>Single-chain first, from a small set of wallets declared in advance.</p><span class="check"><b>Check:</b> every transaction published net of gas, failures included, for the first thirty days.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>First cross-chain trades</b><span class="when">+8 weeks from capital in the vault</span></div><p>Inventory on two chains in a vault its owner controls, every leg co-signed by two independent keys.</p><span class="check"><b>Check:</b> both legs of each trade on chain, and a public count of how often a leg settled alone.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>Filling other people's orders</b><span class="when">After that record</span></div><p>The solver side fills other people's cross-chain orders from the same inventory, starting with a venue that needs no one's permission. Some venues also require a registered company.</p><span class="check"><b>Check:</b> the fills on chain, in the same public record.</span></div></li>
+        <li><span class="dot-m" aria-hidden="true"></span><div class="body"><div class="head"><b>The other chains</b><span class="when">One at a time</span></div><p>Each chain added the same way, each with its own record.</p><span class="check"><b>Check:</b> that chain's record.</span></div></li>
       </ol>
     </section>
 
     <section class="section" id="help">
-      <div class="section-head"><span class="section-num">#06</span><h2 class="section-title">Work with me</h2><span class="section-note">A partner, not a sponsor</span></div>
-      <div class="prose">
-        <p><strong>I am looking for a partner:</strong> someone who brings what the system runs on and shares in what it makes. The partner holds the AI accounts, the cloud servers and the trading capital in their own name. I build and run the system on them.</p>
-        <p><strong>The partner's money stays under the partner's control.</strong> Capital sits in a vault the partner owns, and the system's trading key gets a narrow role that allows trades and nothing else. It cannot withdraw. Profit is split on terms agreed once there is a real-network record to look at, not before.</p>
+      <div class="section-head"><span class="section-num">#08</span><h2 class="section-title">Work with me</h2><span class="section-note">Four ways in</span></div>
+      <p class="section-intro">The facts on this page are the same for everyone. What I ask for depends on who you are.</p>
+      <div class="cards">
+        <div class="card"><span class="k">A trading firm</span><h3>Build it with you</h3><p>If you already trade on chain, I would rather bring the system to you than spend a year arriving where you already are. It runs on your infrastructure and your capital, and the terms follow a real-network record.</p></div>
+        <div class="card"><span class="k">A backer or a syndicate</span><h3>Fund a defined test</h3><p>A test of fixed length, measured the way everything here is already measured. The capital sits in a vault you own; the trading key can trade and cannot withdraw. A profit split is agreed once the numbers are real.</p></div>
+        <div class="card"><span class="k">An individual</span><h3>Fund the next step</h3><p>One node server for one chain and a starting balance for the first real-money trades. A few hundred dollars a month of hardware, not a research budget.</p></div>
+        <div class="card"><span class="k">Infrastructure and ecosystem teams</span><h3>Help in kind</h3><p>A node server, private chain access or AI credits for one chain for six months, against a public write-up of what ran on it.</p></div>
       </div>
-      <div class="cards three">
-        <div class="card"><span class="k">Partner holds</span><h3>The capital</h3><p>Working capital on two chains for the cross-chain engine, where the edge is, in a vault on each chain that the partner owns.</p></div>
-        <div class="card"><span class="k">Partner holds</span><h3>The cloud servers</h3><p>Bare-metal servers for the nodes and private execution access, starting with one chain, in the partner's own account.</p></div>
-        <div class="card"><span class="k">Partner holds</span><h3>The AI accounts</h3><p>The AI system the build runs on, in the partner's own account. Its plan tier sets how fast everything else happens.</p></div>
-      </div>
-      <p class="aside">Help with just one of these, such as servers or AI credits, is welcome too.</p>
       <div class="prose"><p>The code is private. Once we have spoken, anyone serious gets a walkthrough on a call, the full written account, the published records and the detailed figures.</p></div>
       <div class="contact">
         <div class="line"><span class="key">Name</span><span class="val">Jamike Divine</span></div>

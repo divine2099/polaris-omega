@@ -233,3 +233,92 @@ footer .warn { color: var(--amber); max-width: var(--measure); }
   .btn:hover { transform: none; }
 }
 footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- 2026-11-25: readable prose, figures, timeline ---------------------------------------------
+   Running text moves to a sans face; headings, labels and numbers stay monospace (the terminal voice).
+   Every figure is inline SVG coloured from the tokens above; motion is decoration only, the page is
+   complete at rest, and prefers-reduced-motion stops all of it. */
+:root { --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --t-body: 1rem; }
+.lede, .prose, .card p, .row .what p, .blocker p, .points, .fig-cap, .notice, .steps li { font-family: var(--sans); letter-spacing: 0; }
+.lede { font-size: 1.0625rem; line-height: 1.7; }
+.prose { font-size: var(--t-body); line-height: 1.75; }
+.card p, .row .what p, .blocker p { font-size: .9375rem; line-height: 1.7; }
+.section-intro { font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7; color: var(--text-2); max-width: var(--measure); }
+.section-intro strong { color: var(--text); font-weight: 600; }
+
+.points { list-style: none; padding: 0; display: grid; gap: var(--s2); font-size: .9375rem; line-height: 1.6; color: var(--text-2); }
+.points li { position: relative; padding-left: var(--s5); }
+.points li::before { content: "—"; position: absolute; left: 0; color: var(--green-dim); }
+.points b { color: var(--text); font-weight: 600; }
+
+/* figures */
+.figure { display: grid; gap: var(--s3); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: var(--s5); min-width: 0; }
+.figure svg { width: 100%; height: auto; display: block; max-width: 100%; }
+.fig-cap { font-size: var(--t-sm); color: var(--muted); line-height: 1.6; }
+.fig-cap b { color: var(--text-2); font-weight: 600; }
+.fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+@media (max-width: 720px) { .fig-pair { grid-template-columns: minmax(0, 1fr); } }
+
+svg .ln-panel { fill: var(--bg); stroke: var(--border-2); stroke-width: 1; }
+svg .ln-soft { stroke: var(--border-2); stroke-width: 1; fill: none; }
+svg .ln-green { stroke: var(--green); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+svg .ln-amber { stroke: var(--amber); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+svg .ln-muted { stroke: var(--muted-2); stroke-width: 1.5; fill: none; stroke-linecap: round; }
+svg .ln-dash { stroke: var(--green-dim); stroke-width: 1.5; fill: none; stroke-dasharray: 5 6; }
+svg .f-green { fill: var(--green); } svg .f-green-dim { fill: var(--green-dim); } svg .f-amber { fill: var(--amber); }
+svg .f-red { fill: var(--red); } svg .f-muted { fill: var(--muted-2); } svg .f-elev { fill: var(--bg-hover); stroke: var(--border-2); }
+svg .f-wash { fill: rgba(47,245,165,.10); stroke: var(--green-line); }
+svg text { font-family: var(--mono); fill: var(--text-2); font-size: 12px; }
+svg .t-dim { fill: var(--muted); font-size: 11px; } svg .t-hi { fill: var(--white); font-weight: 600; } svg .t-green { fill: var(--green); }
+svg .t-amber { fill: var(--amber); } svg .t-sm { font-size: 11px; } svg .t-lg { font-size: 15px; }
+
+/* the capability bar */
+.capbar { display: grid; gap: var(--s3); }
+.capbar .bar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-2); background: var(--bg); }
+.capbar .bar span { height: 100%; }
+.capbar .s-gate { flex: 2; background: var(--border); } .capbar .s-design { flex: 21; background: var(--muted-2); }
+.capbar .s-built { flex: 12; background: var(--amber); opacity: .55; } .capbar .s-wired { flex: 6; background: var(--amber); }
+.capbar .s-ran { flex: 11; background: var(--green-dim); } .capbar .s-sent { flex: 3; background: var(--green); }
+.capbar .keys { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); font-size: var(--t-xs); color: var(--muted); }
+.capbar .keys i { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: var(--s1); vertical-align: -1px; }
+.capbar .keys .s-gate { background: var(--border); } .capbar .keys .s-design { background: var(--muted-2); } .capbar .keys .s-built { background: var(--amber); opacity: .55; }
+.capbar .keys .s-wired { background: var(--amber); } .capbar .keys .s-ran { background: var(--green-dim); } .capbar .keys .s-sent { background: var(--green); }
+.capbar .keys b { color: var(--text-2); font-weight: 600; }
+
+/* stat tiles for published research */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+@media (max-width: 720px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fact { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: var(--s4); display: grid; gap: var(--s1); align-content: start; min-width: 0; }
+.fact .v { font-size: 1.35rem; font-weight: 700; color: var(--white); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.fact .l { font-family: var(--sans); font-size: var(--t-sm); color: var(--muted); line-height: 1.5; }
+
+/* milestone timeline */
+.timeline { list-style: none; padding: 0; display: grid; gap: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: .55rem; top: .6rem; bottom: .6rem; width: 2px; background: linear-gradient(var(--green) 0 7%, var(--border-2) 7%); }
+.timeline li { position: relative; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: var(--s3); padding-block: var(--s3); }
+.timeline .dot-m { width: 1.15rem; height: 1.15rem; border-radius: 50%; border: 2px solid var(--border-2); background: var(--bg); margin-top: .2rem; position: relative; z-index: 1; }
+.timeline .done .dot-m { background: var(--green); border-color: var(--green); }
+.timeline .next .dot-m { border-color: var(--green); animation: ms-pulse 2.4s ease-in-out infinite; }
+.timeline .body { display: grid; gap: var(--s1); min-width: 0; }
+.timeline .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s2) var(--s3); }
+.timeline .head b { font-size: var(--t-lg); font-weight: 600; color: var(--text); }
+.timeline .when { font-size: var(--t-xs); color: var(--green-dim); font-variant-numeric: tabular-nums; }
+.timeline p { font-family: var(--sans); font-size: .9375rem; line-height: 1.65; color: var(--text-2); }
+.timeline .check { font-family: var(--sans); font-size: var(--t-sm); color: var(--muted); }
+.timeline .check b { color: var(--text-2); font-weight: 600; }
+
+/* motion: decoration only */
+@keyframes ms-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(47,245,165,.45); } 50% { box-shadow: 0 0 0 7px rgba(47,245,165,0); } }
+@keyframes dash-flow { to { stroke-dashoffset: -22; } }
+@keyframes blip { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+svg .flow-dash { animation: dash-flow 1.4s linear infinite; }
+svg .blip { animation: blip 2.2s ease-in-out infinite; }
+svg .blip.d2 { animation-delay: .7s; } svg .blip.d3 { animation-delay: 1.4s; }
+svg .orbit { transform-origin: 160px 160px; animation: orbit 18s linear infinite; }
+.section .figure, .section .cards, .section .timeline { animation: rise .6s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  svg .flow-dash, svg .blip, svg .orbit, .timeline .next .dot-m, .section .figure, .section .cards, .section .timeline { animation: none; }
+}
+.cards.one { grid-template-columns: minmax(0, 1fr); align-content: start; }

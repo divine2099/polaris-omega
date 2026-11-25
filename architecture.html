@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://divine2099.github.io/polaris-omega/architecture.html">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%275%27 fill=%27%230a0a0b%27/%3E%3Cpath fill=%27%232ff5a5%27 d=%27M12 2.5 13.4 10.6 21.5 12 13.4 13.4 12 21.5 10.6 13.4 2.5 12 10.6 10.6Z%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,11 +23,10 @@
     <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path class="mk2" d="M12 6.3 13.1 10.9 17.7 12 13.1 13.1 12 17.7 10.9 13.1 6.3 12 10.9 10.9Z" transform="rotate(45 12 12)"/><path class="mk1" d="M12 .8 13.6 10.4 23.2 12 13.6 13.6 12 23.2 10.4 13.6.8 12 10.4 10.4Z"/></svg><span>Polaris Omega</span><span class="ver">Testnet</span></a>
     <nav class="nav-links" aria-label="Sections">
       <a class="nav-sec lg" href="#engines">Engines</a>
-            <a class="nav-sec lg" href="#market">Market</a>
-      <a class="nav-sec lg" href="#access">Access</a>
-      <a class="nav-sec lg" href="#nodes">Nodes</a>
+      <a class="nav-sec lg" href="#layers">Layers</a>
       <a class="nav-sec lg" href="#safety">Safety</a>
       <a class="nav-sec lg" href="#scope">Scope</a>
+      <a class="nav-sec lg" href="#request">On request</a>
       <a href="index.html">Overview</a>
       <a class="nav-cta" href="index.html#help">Work with me →</a>
     </nav>
@@ -120,45 +119,8 @@
       </div>
     </section>
 
-    <section class="section" id="market">
-      <div class="section-head"><span class="section-num">#04</span><h2 class="section-title">Knowing the market</h2><span class="section-note">What it trusts, and how it stays current</span></div>
-      <div class="cards">
-        <div class="card"><h3>A pinned universe, built from the chains</h3><p>Every pool and asset it may trade is read from the chains themselves at a fixed block and committed. A test rebuilds that universe from the chain and fails if the committed copy ever disagrees. Nothing outside it is traded.</p><div class="chips"><i class="chip live">Live</i></div></div>
-        <div class="card"><h3>A watcher on every protocol it touches</h3><p>On a fixed cadence it checks each pinned contract's code, its upgrade pointers and its key parameters. Any change stops trading on that venue until the new code is reviewed. Automatic re-review of the new code is the next step.</p><div class="chips"><i class="chip live">Watch and stop: live</i><i class="chip design">Automatic re-review: designed</i></div></div>
-        <div class="card"><h3>Protocols read at source</h3><p>Protocols are audited from their deployed source code, pinned to the exact version on chain and checked byte for byte against it, with every claim cited to a line of code. Most integrated venues are done, and a registry tracks the ones still queued. The watcher says when one needs reading again.</p><div class="chips"><i class="chip live">Most venues done</i><i class="chip built">Some queued</i></div></div>
-        <div class="card"><h3>Exact state at the moment of decision</h3><p>Every trade is decided against the chain's actual state at that block, by running the real contract code rather than a model of the market. A decision priced too long ago is refused before it is sent.</p><div class="chips"><i class="chip live">Live</i></div></div>
-        <div class="card"><h3>A running price estimate on every chain</h3><p>Each chain keeps a filtered estimate of every asset's price, adjusted for decimals, direction and block time, so that two chains can be compared at all. Updating it on every block costs chain reads, so today it runs at start-up, and on every block once there is a node.</p><div class="chips"><i class="chip live">At start-up</i><i class="chip built">Every block: built, off</i></div></div>
-        <div class="card"><h3>A simulated multi-chain world</h3><p>A test world built from real chain state on several chains at once, where a trade moves each pool exactly by that venue's own maths and rolls back for free. Its scoring refuses a strategy that only looks good on a lucky run. Rival bots, volatility and failure scenarios come next.</p><div class="chips"><i class="chip built">World and scoring: built</i><i class="chip design">Rivals and stress scenarios: designed</i></div></div>
-      </div>
-      <p class="aside">A copy of the chain is the ground truth for one block. The simulated world is built on those copies and adds what a copy cannot show: other players, stress and failure. Live decisions use neither; they use the chain itself at that block.</p>
-    </section>
-
-    <section class="section" id="access">
-      <div class="section-head"><span class="section-num">#05</span><h2 class="section-title">Reaching the chain</h2><span class="section-note">Reading fast, sending privately</span></div>
-      <div class="cards">
-        <div class="card"><span class="k">Read · Today</span><h3>A paid endpoint at a hobby tier</h3><p>Without a node, every read goes over the network to a hosted endpoint, paced against a monthly allowance and cached so nothing is paid for twice. It is enough to test on, and it is why the system falls behind a fast chain.</p><div class="chips"><i class="chip live">Live</i></div></div>
-        <div class="card"><span class="k">Read · Target</span><h3>Its own node on every chain</h3><p>Inside the node on Ethereum, Base and Optimism; beside it on the same machine on Arbitrum and BNB Chain. State comes from the node's own database in well under a microsecond, with no network in the way.</p><div class="chips"><i class="chip built">Built, waits on a machine</i></div></div>
-        <div class="card"><span class="k">Read · Bridge</span><h3>Private endpoints until the nodes exist</h3><p>A dedicated private endpoint per chain, with a real allowance, closes most of the gap before the nodes are up and stays as the fallback afterwards. Endpoint keys are never written into code or into any record.</p><div class="chips"><i class="chip design">The ask</i></div></div>
-        <div class="card"><span class="k">Send · L2s</span><h3>Straight to the sequencer</h3><p>Base, Arbitrum and Optimism are ordered by a sequencer, not an auction. The system sends there directly, asks which route each endpoint actually accepts rather than assuming, and follows every transaction to its result.</p><div class="chips"><i class="chip live">Live on testnet</i></div></div>
-        <div class="card wide"><span class="k">Send · Ethereum and BNB Chain</span><h3>Private bundles through block builders</h3><p>On chains with a block-builder auction, trades go as private bundles that land whole or not at all, and never sit in the public waiting room where others can copy or front-run them. Open builder networks such as BuilderNet come first, because any searcher can submit to them without a private deal and they refund part of the value a bundle adds. The contract already has the instruction that pays a builder's bid exactly; routing to builders is the next integration.</p><div class="chips"><i class="chip built">Builder payment: built</i><i class="chip design">Builder routing: next</i></div></div>
-      </div>
-    </section>
-
-    <section class="section" id="nodes">
-      <div class="section-head"><span class="section-num">#06</span><h2 class="section-title">The node servers</h2><span class="section-note">Where it will run</span></div>
-      <div class="prose"><p>The system is meant to run on the node, not next to a farm of servers asking the node questions. Each chain gets its own bare-metal server, and the cores and memory beyond what the node needs are the system's own compute.</p></div>
-      <div class="cards">
-        <div class="card"><span class="k">Ethereum</span><h3>An execution node and a consensus node</h3><p>The system runs as an extension inside the execution node, and private bundles to block builders will go out from here. It takes the other larger server.</p><div class="chips"><i class="chip built">Node mode: built</i><i class="chip design">Server: the ask</i></div></div>
-        <div class="card"><span class="k">Base · Optimism</span><h3>One node each, the system inside it</h3><p>Both run the same node software, which has an extension slot. Base gets one of the two larger servers, for the disk its chain needs.</p><div class="chips"><i class="chip built">Node mode: built</i><i class="chip design">Server: the ask</i></div></div>
-        <div class="card"><span class="k">Arbitrum · BNB Chain</span><h3>The node, and the system beside it</h3><p>These nodes have no extension slot, so the system runs as a second process on the same server, reading the node's live feed and producing the same signals as everywhere else.</p><div class="chips"><i class="chip built">Same signals: built</i><i class="chip design">Server: the ask</i></div></div>
-        <div class="card"><span class="k">Services</span><h3>A separate machine for signing and coordination</h3><p>The second signer, coordination between chains, the dashboard and the metrics run on their own small machine with no public address, apart from the trading servers.</p><div class="chips"><i class="chip built">Built</i><i class="chip design">Machine: the ask</i></div></div>
-        <div class="card wide"><span class="k">Between them</span><h3>A private network, snapshots and room to grow</h3><p>The servers talk over a private, encrypted network; only the node's own peer-to-peer ports face the internet. Node snapshots are kept in object storage so a failed node is restored in hours rather than re-synced over days. Later, servers move next to each chain's sequencer, and the critical chains get a standby node.</p><div class="chips"><i class="chip design">Designed</i></div></div>
-      </div>
-      <p class="aside">About $1,600 a month runs four chains and the services machine; BNB Chain's node is heavier and adds a fifth server. Paying a year ahead brings the four-chain figure down by more than a quarter.</p>
-    </section>
-
     <section class="section" id="safety">
-      <div class="section-head"><span class="section-num">#07</span><h2 class="section-title">Safety by construction</h2><span class="section-note">Enforced in code, not in review</span></div>
+      <div class="section-head"><span class="section-num">#04</span><h2 class="section-title">Safety by construction</h2><span class="section-note">Enforced in code, not in review</span></div>
       <div class="cards">
         <div class="card"><h3>Money only goes through doors</h3><p>Value moves only through an exchange's or protocol's own entry functions, never by sending it to a contract address. This is checked when every trade is built.</p></div>
         <div class="card"><h3>No trade until every stage is green</h3><p>A staged readiness check runs at start-up, from configuration and keys to custody and pricing. A skipped stage counts as red.</p></div>
@@ -170,7 +132,7 @@
     </section>
 
     <section class="section" id="stack">
-      <div class="section-head"><span class="section-num">#08</span><h2 class="section-title">Stack and coverage</h2></div>
+      <div class="section-head"><span class="section-num">#05</span><h2 class="section-title">Stack and coverage</h2></div>
       <div class="cards three">
         <div class="card"><span class="k">Built with</span><div class="tags"><span>Rust</span><span>Reth execution extensions</span><span>revm</span><span>Solidity</span><span>Safe + Zodiac Roles</span><span>2-of-2 threshold signing</span><span>Mutual TLS</span></div></div>
         <div class="card"><span class="k">Chains</span><div class="tags"><span>Base</span><span>Arbitrum</span><span>Optimism</span><span>BNB Chain</span><span>Ethereum</span></div></div>
@@ -179,7 +141,7 @@
     </section>
 
     <section class="section" id="scope">
-      <div class="section-head"><span class="section-num">#09</span><h2 class="section-title">Full scope</h2><span class="section-note">What the plan covers, by phase</span></div>
+      <div class="section-head"><span class="section-num">#06</span><h2 class="section-title">Full scope</h2><span class="section-note">What the plan covers, by phase</span></div>
       <div class="layers">
         <div class="layer"><span class="ln">P0</span><div><b>Single-chain, atomic</b><p>Gaps between pools on one chain, and liquidations on lending markets. Funded by loans repaid in the same transaction.</p><div class="chips"><i class="chip live">Arbitrage: live on testnet</i><i class="chip built">Liquidations: built</i></div></div></div>
         <div class="layer"><span class="ln">P1</span><div><b>Cross-chain, capital-backed</b><p>The same asset priced differently on two chains, related assets drifting apart, and cross-chain liquidations. Funded by owned inventory, by borrowing on each chain, by delegated credit, or from a partner's own vault.</p><div class="chips"><i class="chip built">Planner and Safe: built</i><i class="chip design">Borrowing, credit, partner vault: designed</i></div></div></div>
@@ -192,7 +154,7 @@
     </section>
 
     <section class="section" id="limits">
-      <div class="section-head"><span class="section-num">#10</span><h2 class="section-title">What is not there yet</h2></div>
+      <div class="section-head"><span class="section-num">#07</span><h2 class="section-title">What is not there yet</h2></div>
       <div class="rows">
         <div class="row"><span class="when">Machine</span><div class="what"><b>No node servers</b><p>The node mode is built and has run on a development node. In development the system reads the chain over the network and falls behind fast chains.</p></div></div>
         <div class="row"><span class="when">Capital</span><div class="what"><b>No working capital on two chains</b><p>The cross-chain engine plans and checks real candidates, and stops where inventory is needed.</p></div></div>
@@ -200,6 +162,18 @@
         <div class="row"><span class="when">Later</span><div class="what"><b>Market making</b><p>Quoting both sides with owned inventory is the last phase, after the cross-chain record exists.</p></div></div>
       </div>
       <div class="actions"><a class="btn btn-primary" href="index.html#help">Work with me →</a><a class="btn btn-ghost" href="index.html">Back to the overview</a></div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="section-head"><span class="section-num">#08</span><h2 class="section-title">The full architecture, on request</h2><span class="section-note">After a first conversation</span></div>
+      <p class="section-intro">This page shows the shape. The depth is the part that took the work, so it goes to people who are seriously interested, after a first conversation.</p>
+      <div class="cards">
+        <div class="card"><span class="k">Market</span><h3>How it knows the market</h3><p>How the traded universe is built from the chains and kept honest, how protocols are audited and watched, and how prices are estimated on each chain.</p></div>
+        <div class="card"><span class="k">Access</span><h3>How it reaches each chain</h3><p>How it reads state today and on its own nodes, and how trades are sent to sequencers and block builders.</p></div>
+        <div class="card"><span class="k">Servers</span><h3>Where it runs</h3><p>The server for each chain, the separate signing machine, the private network between them, and the cost of each.</p></div>
+        <div class="card"><span class="k">Evidence</span><h3>The full technical account</h3><p>Every capability with its evidence, what is not yet connected, the milestones in two tracks, and the questions an engineer will ask, answered.</p></div>
+      </div>
+      <p class="aside">Ask through the contact details on the overview page. The code itself stays private.</p>
     </section>
 
   </div>
