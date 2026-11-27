@@ -276,8 +276,8 @@ svg .t-amber { fill: var(--amber); } svg .t-sm { font-size: 11px; } svg .t-lg { 
 .capbar { display: grid; gap: var(--s3); }
 .capbar .bar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-2); background: var(--bg); }
 .capbar .bar span { height: 100%; }
-.capbar .s-gate { flex: 2; background: var(--border); } .capbar .s-design { flex: 21; background: var(--muted-2); }
-.capbar .s-built { flex: 12; background: var(--amber); opacity: .55; } .capbar .s-wired { flex: 6; background: var(--amber); }
+.capbar .s-gate { flex: 3; background: var(--border); } .capbar .s-design { flex: 22; background: var(--muted-2); }
+.capbar .s-built { flex: 12; background: var(--amber); opacity: .55; } .capbar .s-wired { flex: 8; background: var(--amber); }
 .capbar .s-ran { flex: 11; background: var(--green-dim); } .capbar .s-sent { flex: 3; background: var(--green); }
 .capbar .keys { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); font-size: var(--t-xs); color: var(--muted); }
 .capbar .keys i { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: var(--s1); vertical-align: -1px; }

@@ -84,7 +84,7 @@
         <div class="stat-grid">
           <div class="stat"><div class="v">5</div><span class="l">Chains the system is built for</span></div>
           <div class="stat"><div class="v">1</div><span class="l">Public test network traded, exact to the smallest unit</span></div>
-          <div class="stat"><div class="v">14 / 55</div><span class="l">Capabilities that have run on live chain data</span></div>
+          <div class="stat"><div class="v">14 / 59</div><span class="l">Capabilities that have run on live chain data</span></div>
           <div class="stat"><div class="v warn">0</div><span class="l">Real-money trades so far</span></div>
         </div>
       </div>
@@ -133,10 +133,10 @@
 
     <section class="section" id="log">
       <div class="section-head"><span class="section-num">#03</span><h2 class="section-title">What has happened</h2><span class="section-note">Real networks, test network</span></div>
-      <div class="figure capbar" aria-label="55 capabilities by stage">
-        <div class="bar" role="img" aria-label="2 research-gated, 21 designed, 12 built, 6 wired, 11 run on live chain data, 3 sent on testnet, 0 live on mainnet"><span class="s-gate"></span><span class="s-design"></span><span class="s-built"></span><span class="s-wired"></span><span class="s-ran"></span><span class="s-sent"></span></div>
-        <div class="keys"><span><i class="s-sent"></i><b>3</b> sent transactions on a test network</span><span><i class="s-ran"></i><b>11</b> ran on live chain data</span><span><i class="s-wired"></i><b>6</b> switched on</span><span><i class="s-built"></i><b>12</b> built, not switched on</span><span><i class="s-design"></i><b>21</b> designed</span><span><i class="s-gate"></i><b>2</b> waiting on research</span></div>
-        <p class="fig-cap"><b>All 55 capabilities, by how far each has got.</b> Each stage is worked out from the code, from what the running program calls and from its own records every time the project is built, never typed in. None is live with real money yet.</p>
+      <div class="figure capbar" aria-label="59 capabilities by stage">
+        <div class="bar" role="img" aria-label="3 research-gated, 22 designed, 12 built, 8 wired, 11 run on live chain data, 3 sent on testnet, 0 live on mainnet"><span class="s-gate"></span><span class="s-design"></span><span class="s-built"></span><span class="s-wired"></span><span class="s-ran"></span><span class="s-sent"></span></div>
+        <div class="keys"><span><i class="s-sent"></i><b>3</b> sent transactions on a test network</span><span><i class="s-ran"></i><b>11</b> ran on live chain data</span><span><i class="s-wired"></i><b>8</b> switched on</span><span><i class="s-built"></i><b>12</b> built, not switched on</span><span><i class="s-design"></i><b>22</b> designed</span><span><i class="s-gate"></i><b>3</b> waiting on research</span></div>
+        <p class="fig-cap"><b>All 59 capabilities, by how far each has got.</b> Each stage is worked out from the code, from what the running program calls and from its own records every time the project is built, never typed in. None is live with real money yet.</p>
       </div>
       <div class="rows">
         <div class="row"><span class="when">2026-10</span><div class="what"><b>Dry runs on five real networks <span class="status ok">Ran</span></b><p>The whole path, from a new block to a trade ready to sign, ran on the live heads of all five real networks, sending nothing. Every refusal was recorded with its reason.</p></div></div>
@@ -229,7 +229,8 @@
           <figcaption class="fig-cap" id="fig-loop-cap"><b>One loop holds it together.</b> Map the market, vet what is found, declare it, find opportunities, prove each by exact simulation, decide under the risk limits, route, execute, record, and learn from the record.</figcaption>
         </figure>
         <div class="cards one">
-          <div class="card"><span class="k">Finding</span><h3>Look for why a gap exists</h3><p>Price gaps have a few causes: one asset under two rules, markets on different clocks, thresholds that force a trade, frictions that keep a gap open, identities that break between chains. Search by cause, and a known strategy becomes a label on what was found.</p><div class="chips"><i class="chip design">Designed</i></div></div>
+          <div class="card"><span class="k">Finding</span><h3>Look for why a gap exists</h3><p>Price gaps have a small number of causes, such as two markets that update on different clocks, or one asset priced under two different rules. The system is moving to search by cause rather than by the patterns everyone scans, so a known strategy becomes a label on what was found, and a profitable path that matches no known pattern is recorded rather than missed.</p><div class="chips"><i class="chip design">Designed</i></div></div>
+          <div class="card"><span class="k">Protection</span><h3>Hedge the book, not each trade</h3><p>A perpetual-futures venue was researched as a hedge. Its fee is the size of the gaps, so hedging every trade would spend the edge. Hedging the inventory's net exposure, and capping a leg that settles alone, does not.</p><div class="chips"><i class="chip design">Researching</i></div></div>
           <div class="card"><span class="k">Evidence</span><h3>Prove it on real-network history first</h3><p>Replay past blocks through the same exact simulator and label every opportunity: who took it, how, and what they paid. Real-market evidence with no capital at risk.</p><div class="chips"><i class="chip built">Next milestone</i></div></div>
         </div>
       </div>
